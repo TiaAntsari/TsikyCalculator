@@ -5,11 +5,175 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript">
+
+        const pi = Math.PI;
+        function isCorrect(value) {
+            try{
+                // console.log(value);
+                if(eval(value) || eval(value) == 0){
+                    // alert(value);
+                    return true;
+                }
+                // alert("0 tsy voa-traite")
+
+            }catch(e){
+                alert("ERROR!! Misy diso ...");
+                return false;
+            }
+        }
+
+        function sin(value){
+            try {
+                // console.log(value);
+                if (eval(value) || eval(value) == 0) {
+                    // alert(value);
+                    return Math.sin(value);
+                }
+                // alert("0 tsy voa-traite")
+
+            } catch (e) {
+                alert("ERROR!! Misy diso ...");
+                return false;
+            }
+        }
+
+        function cos(value) {
+                try {
+                    // console.log(value);
+                    if (eval(value) || eval(value) == 0) {
+                        // alert(value);
+                        return Math.cos(value);
+                    }
+                    // alert("0 tsy voa-traite")
+
+                } catch (e) {
+                    alert("ERROR!! Misy diso ...");
+                    return false;
+                }
+            }
+
+        function tan(value) {
+                try {
+                    // console.log(value);
+                    if (eval(value) || eval(value) == 0) {
+                        // alert(value);
+                        return Math.tan(value);
+                    }
+                    // alert("0 tsy voa-traite")
+
+                } catch (e) {
+                    alert("ERROR!! Misy diso ...");
+                    return false;
+                }
+            }
+
+        function racine(value) {
+                try {
+                     // console.log(value);
+                    if ((eval(value) || eval(value) == 0) && value>=0) {
+                        // alert(value);
+                        return Math.sqrt(value);
+                    }
+                        alert("Give value POSITIF!!");
+                        return 'racine('+ value + ')';
+                    // alert("0 tsy voa-traite")
+
+                } catch (e) {
+                    alert("ERROR!! Misy diso ...");
+                    return value;
+                }
+            }
+
+            function carre(value) {
+                    try {
+                        // console.log(value);
+                        if (eval(value) || eval(value) == 0) {
+                            // alert(value);
+                            return value*value;
+                        }
+                        
+                        // alert("0 tsy voa-traite")
+
+                    } catch (e) {
+                        alert("ERROR!! Misy diso ...");
+                        return false;
+                    }
+                }
+
+            function log(value) {
+                    try {
+                        // console.log(value);
+                        if ((eval(value) || eval(value) == 0) && value >= 0) {
+                            // alert(value);
+                            return Math.log10(value);
+                        }
+                        alert("Give value POSITIF!!");
+                        return 'log(' + value + ')';
+                        // alert("0 tsy voa-traite")
+
+                    } catch (e) {
+                        alert("ERROR!! Misy diso ...");
+                        return 'log(' + value + ')';
+                    }
+                }
+
+            function ln(value) {
+                    try {
+                        // console.log(value);
+                        if ((eval(value) || eval(value) == 0) && value >= 0) {
+                            // alert(value);
+                            return Math.log(value);
+                        }
+                        alert("Give value POSITIF!!");
+                        return 'ln(' + value + ')';
+                        // alert("0 tsy voa-traite")
+
+                    } catch (e) {
+                        alert(e+"\nERROR!! Misy diso ...");
+                        return 'ln(' + value + ')';
+                    }
+                }
+
+            function exp(value) {
+                    try {
+                        // console.log(value);
+                        if (eval(value) || eval(value) == 0) {
+                            // alert(value);
+                            return Math.exp(value);
+                        }
+
+                        // alert("0 tsy voa-traite")
+
+                    } catch (e) {
+                        alert("ERROR!! Misy diso ...");
+                        return 'exp(' + value + ')';
+                    }
+                }
+
+            /*function sup(value) {
+                    try {
+                        // console.log(value);
+                        if (eval(value) || eval(value) == 0) {
+                            // alert(value);
+                            return Math.sup(value);
+                        }
+                        alert("Give value POSITIF!!");
+                        return 'ln(' + value + ')';
+                        // alert("0 tsy voa-traite")
+
+                    } catch (e) {
+                        alert(e + "\nERROR!! Misy diso ...");
+                        return 'ln(' + value + ')';
+                    }
+                } */
+        
+    </script>
     <title>Tsiky Calculator</title>
 </head>
 <body>
     <div id="container">
-        <div class="titre">&#128073; Ravo Calculator &#128072;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#128075;</div>    
+        <div class="titre">&#128073; Ravo Calculator &#128072;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#128075;</div>    
         <div class="screen">
             
             <form name="calculator">
@@ -18,21 +182,23 @@
         <div class="btns">
             <p>
                 <input type="button" value="SIN" class="button black"
-                onclick="calculator.display.value=Math.sin(calculator.display.value)">
+                onclick="calculator.display.value='sin('">
                 <input type="button" value="COS" class="button black"
-                onclick="calculator.display.value=Math.cos(calculator.display.value)">
+                onclick="calculator.display.value+='cos('">
                 <input type="button" value="TAN" class="button black"
-                onclick="calculator.display.value=Math.tan(calculator.display.value)">
-                <input type="button" value="(.)" class="button black"
-                onclick="calculator.display.value+=''">
+                onclick="calculator.display.value+='tan('">
+                <!-- <input type="button" value="TAN" class="button black"
+                    onclick="calculator.display.value='Math.tan(' + calculator.display.value+')'"> -->                
+                <input type="button" value="&#8734;" class="button black"
+                onclick="calculator.display.value+='Infinity'">
                 <input type="button" value="CLR" class="button black"
                 onclick="calculator.display.value+=''">
             </p>
             <p>
                 <input type="button" value="X&#178;" class="button black"
-                onclick="calculator.display.value+=''">
+                onclick="calculator.display.value+='carre('">
                 <input type="button" value="&radic;" class="button black"
-                onclick="calculator.display.value+='&radic;'">
+                onclick="calculator.display.value+='racine('">
                 <input type="button" value="^" class="button black"
                 onclick="calculator.display.value+='^'">
                 <input type="button" value="LOG" class="button black"
@@ -60,9 +226,9 @@
                 <input type="button" value="9" class="button s"
                 onclick="calculator.display.value+='9'">
                 <input type="button" value="DEL" class="button o"
+                onclick="calculator.display.value=(calculator.display.value).slice(0, calculator.display.value.length-1);">
+                <input type="button" value="AC" class="button o"
                 onclick="calculator.display.value=''">
-                <input type="button" value="EXIT" class="button o"
-                onclick="calculator.display.value+=''">
             </p>
             <p>
                 <input type="button" value="4" class="button s"
@@ -93,11 +259,11 @@
                 <input type="button" value="." class="button s"
                 onclick="calculator.display.value+='.'">
                 <input type="button" name="exp" value="EXP" class="button s"
-                onclick="calculator.display.value=Math.exp(calculator.display.value)">
+                onclick="calculator.display.value+='exp('">
                 <input type="button" name="pi" value="&pi;" class="button s"
-                onclick="calculator.display.value=Math.PI">
+                onclick="calculator.display.value+= 'pi'">
                 <input type="button" value="=" class="button s"
-                onclick="calculator.display.value=eval(calculator.display.value)">
+                onclick="calculator.display.value=(isCorrect(calculator.display.value ) ? eval(calculator.display.value) : calculator.display.value)">
             </p>
 
         </div>
